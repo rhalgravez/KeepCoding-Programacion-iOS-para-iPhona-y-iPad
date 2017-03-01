@@ -34,4 +34,9 @@
 
 -(instancetype)init NS_UNAVAILABLE;
 
+-(instancetype) initWithName: (NSString *) aName
+             wineCompanyName: (NSString *) aWineCompanyName
+                        type: (NSString *) aType
+                      origin: (NSString *) anOrigin;
+
 @end

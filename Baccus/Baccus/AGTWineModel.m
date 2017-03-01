@@ -8,7 +8,11 @@
 
 #import "AGTWineModel.h"
 
+static int const NO_RATING = -1;
+
 @implementation AGTWineModel
+
+#pragma mark - Init
 
 -(instancetype) initWithName: (NSString *)aName
              wineCompanyName: (NSString *) aWineCompanyName
@@ -33,6 +37,22 @@
     }
     
     return self;
+}
+
+-(instancetype) initWithName: (NSString *) aName
+             wineCompanyName: (NSString *) aWineCompanyName
+                        type: (NSString *) aType
+                      origin: (NSString *) anOrigin {
+    
+    return [self initWithName:aName
+              wineCompanyName:aWineCompanyName
+                         type:aType
+                       origin:anOrigin
+                       grapes:nil
+               wineCompanyWeb:nil
+                        notes:nil
+                      raiting:NO_RATING
+                        photo:nil];
 }
 
 @end
