@@ -20,7 +20,27 @@
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *wineCompanyName;
 
+
+#pragma mark -  Class Constructor Methods
+
 +(instancetype)new NS_UNAVAILABLE;
+
++(instancetype) wineWithName: (NSString *)aName
+             wineCompanyName: (NSString *) aWineCompanyName
+                        type: (NSString *)  aType
+                      origin: (NSString *) anOrigin
+                      grapes: (NSArray *) arrayOfGrapes
+              wineCompanyWeb: (NSURL *) aURL
+                       notes: (NSString *) aNotes
+                     raiting: (int) aRating
+                       photo: (UIImage *) aPhoto;
+
++(instancetype) wineWithName: (NSString *) aName
+             wineCompanyName: (NSString *) aWineCompanyName
+                        type: (NSString *) aType
+                      origin: (NSString *) anOrigin;
+
+#pragma mark - Init
 
 -(instancetype) initWithName: (NSString *)aName
              wineCompanyName: (NSString *) aWineCompanyName

@@ -12,6 +12,40 @@ static int const NO_RATING = -1;
 
 @implementation AGTWineModel
 
+#pragma mark -  Class Constructor Methods
+
++(instancetype) wineWithName: (NSString *)aName
+             wineCompanyName: (NSString *) aWineCompanyName
+                        type: (NSString *)  aType
+                      origin: (NSString *) anOrigin
+                      grapes: (NSArray *) arrayOfGrapes
+              wineCompanyWeb: (NSURL *) aURL
+                       notes: (NSString *) aNotes
+                     raiting: (int) aRating
+                       photo: (UIImage *) aPhoto {
+    
+    return [[self alloc] initWithName:aName
+                      wineCompanyName:aWineCompanyName
+                                 type:aType
+                               origin:anOrigin
+                               grapes:arrayOfGrapes
+                       wineCompanyWeb:aURL
+                                notes:aNotes
+                              raiting:aRating
+                                photo:aPhoto];
+}
+
++(instancetype) wineWithName: (NSString *) aName
+             wineCompanyName: (NSString *) aWineCompanyName
+                        type: (NSString *) aType
+                      origin: (NSString *) anOrigin {
+    
+    return  [[self alloc] initWithName:aName
+                       wineCompanyName:aWineCompanyName
+                                  type:aType
+                                origin:anOrigin];
+}
+
 #pragma mark - Init
 
 -(instancetype) initWithName: (NSString *)aName
