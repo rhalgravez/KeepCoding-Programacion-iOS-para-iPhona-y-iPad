@@ -11,6 +11,7 @@
 		DF85464F1E67461600DAE116 /* AGTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DF85464E1E67461600DAE116 /* AGTAppDelegate.m */; };
 		DF8546571E67461600DAE116 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF8546561E67461600DAE116 /* Assets.xcassets */; };
 		DF85465A1E67461600DAE116 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF8546581E67461600DAE116 /* LaunchScreen.storyboard */; };
+		DF8546631E674CC200DAE116 /* AGTWineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8546621E674CC200DAE116 /* AGTWineModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,9 @@
 		DF8546561E67461600DAE116 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF8546591E67461600DAE116 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF85465B1E67461600DAE116 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF8546611E674CC200DAE116 /* AGTWineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTWineModel.h; sourceTree = "<group>"; };
+		DF8546621E674CC200DAE116 /* AGTWineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTWineModel.m; sourceTree = "<group>"; };
+		DF8546651E674EED00DAE116 /* Baccus-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Baccus-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,7 @@
 				DF8546581E67461600DAE116 /* LaunchScreen.storyboard */,
 				DF85465B1E67461600DAE116 /* Info.plist */,
 				DF85464A1E67461600DAE116 /* Supporting Files */,
+				DF8546641E674CC900DAE116 /* Models */,
 			);
 			path = Baccus;
 			sourceTree = "<group>";
@@ -67,8 +72,18 @@
 			isa = PBXGroup;
 			children = (
 				DF85464B1E67461600DAE116 /* main.m */,
+				DF8546651E674EED00DAE116 /* Baccus-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DF8546641E674CC900DAE116 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DF8546611E674CC200DAE116 /* AGTWineModel.h */,
+				DF8546621E674CC200DAE116 /* AGTWineModel.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF85464F1E67461600DAE116 /* AGTAppDelegate.m in Sources */,
+				DF8546631E674CC200DAE116 /* AGTWineModel.m in Sources */,
 				DF85464C1E67461600DAE116 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,6 +270,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Baccus/Baccus-Prefix.pch";
 				INFOPLIST_FILE = Baccus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rhalgravez.Baccus;
@@ -265,6 +283,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Baccus/Baccus-Prefix.pch";
 				INFOPLIST_FILE = Baccus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rhalgravez.Baccus;
