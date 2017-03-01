@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DF85464C1E67461600DAE116 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DF85464B1E67461600DAE116 /* main.m */; };
-		DF85464F1E67461600DAE116 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DF85464E1E67461600DAE116 /* AppDelegate.m */; };
-		DF8546521E67461600DAE116 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8546511E67461600DAE116 /* ViewController.m */; };
-		DF8546551E67461600DAE116 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF8546531E67461600DAE116 /* Main.storyboard */; };
+		DF85464F1E67461600DAE116 /* AGTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DF85464E1E67461600DAE116 /* AGTAppDelegate.m */; };
 		DF8546571E67461600DAE116 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF8546561E67461600DAE116 /* Assets.xcassets */; };
 		DF85465A1E67461600DAE116 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF8546581E67461600DAE116 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -18,11 +16,8 @@
 /* Begin PBXFileReference section */
 		DF8546471E67461600DAE116 /* Baccus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Baccus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF85464B1E67461600DAE116 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DF85464D1E67461600DAE116 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		DF85464E1E67461600DAE116 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DF8546501E67461600DAE116 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		DF8546511E67461600DAE116 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		DF8546541E67461600DAE116 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DF85464D1E67461600DAE116 /* AGTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGTAppDelegate.h; sourceTree = "<group>"; };
+		DF85464E1E67461600DAE116 /* AGTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGTAppDelegate.m; sourceTree = "<group>"; };
 		DF8546561E67461600DAE116 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF8546591E67461600DAE116 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF85465B1E67461600DAE116 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,11 +53,8 @@
 		DF8546491E67461600DAE116 /* Baccus */ = {
 			isa = PBXGroup;
 			children = (
-				DF85464D1E67461600DAE116 /* AppDelegate.h */,
-				DF85464E1E67461600DAE116 /* AppDelegate.m */,
-				DF8546501E67461600DAE116 /* ViewController.h */,
-				DF8546511E67461600DAE116 /* ViewController.m */,
-				DF8546531E67461600DAE116 /* Main.storyboard */,
+				DF85464D1E67461600DAE116 /* AGTAppDelegate.h */,
+				DF85464E1E67461600DAE116 /* AGTAppDelegate.m */,
 				DF8546561E67461600DAE116 /* Assets.xcassets */,
 				DF8546581E67461600DAE116 /* LaunchScreen.storyboard */,
 				DF85465B1E67461600DAE116 /* Info.plist */,
@@ -139,7 +131,6 @@
 			files = (
 				DF85465A1E67461600DAE116 /* LaunchScreen.storyboard in Resources */,
 				DF8546571E67461600DAE116 /* Assets.xcassets in Resources */,
-				DF8546551E67461600DAE116 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,8 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF8546521E67461600DAE116 /* ViewController.m in Sources */,
-				DF85464F1E67461600DAE116 /* AppDelegate.m in Sources */,
+				DF85464F1E67461600DAE116 /* AGTAppDelegate.m in Sources */,
 				DF85464C1E67461600DAE116 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,14 +149,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DF8546531E67461600DAE116 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DF8546541E67461600DAE116 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DF8546581E67461600DAE116 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

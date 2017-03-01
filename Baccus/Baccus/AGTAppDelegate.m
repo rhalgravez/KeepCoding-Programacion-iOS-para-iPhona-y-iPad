@@ -6,13 +6,13 @@
 //  Copyright © 2017 RHalgravez. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "AGTAppDelegate.h"
 
-@interface AppDelegate ()
+@interface AGTAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation AGTAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
