@@ -16,6 +16,11 @@
                 <outlet property="typeLabel" destination="jrW-RE-E8s" id="RGZ-tu-HUY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="wineryNameLabel" destination="ulv-DN-kin" id="xco-S5-5dm"/>
+                <outletCollection property="ratingViews" destination="7Tp-3p-86I" id="ooR-cX-Hyf"/>
+                <outletCollection property="ratingViews" destination="YyO-am-Vhc" id="7KA-Jc-FNB"/>
+                <outletCollection property="ratingViews" destination="TtP-Jg-mjD" id="bct-sP-dYx"/>
+                <outletCollection property="ratingViews" destination="FGB-ee-ke3" id="rBs-5Y-aGe"/>
+                <outletCollection property="ratingViews" destination="cA9-K7-BRQ" id="o1L-7B-vgO"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -76,6 +81,26 @@
                         <action selector="displayWeb:" destination="-1" eventType="touchUpInside" id="fZm-Sw-dt1"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="7Tp-3p-86I">
+                    <frame key="frameInset" minX="293" minY="166" width="40" height="38"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="YyO-am-Vhc">
+                    <frame key="frameInset" minX="341" minY="166" width="40" height="38"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="TtP-Jg-mjD">
+                    <frame key="frameInset" minX="389" minY="166" width="40" height="38"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="FGB-ee-ke3">
+                    <frame key="frameInset" minX="437" minY="166" width="40" height="38"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="cA9-K7-BRQ">
+                    <frame key="frameInset" minX="485" minY="166" width="40" height="38"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <point key="canvasLocation" x="27" y="53"/>
