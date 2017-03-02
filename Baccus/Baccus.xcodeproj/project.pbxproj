@@ -12,6 +12,8 @@
 		DF8546571E67461600DAE116 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF8546561E67461600DAE116 /* Assets.xcassets */; };
 		DF85465A1E67461600DAE116 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF8546581E67461600DAE116 /* LaunchScreen.storyboard */; };
 		DF8546631E674CC200DAE116 /* AGTWineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8546621E674CC200DAE116 /* AGTWineModel.m */; };
+		DF8546691E6896CA00DAE116 /* AGTWineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8546671E6896CA00DAE116 /* AGTWineViewController.m */; };
+		DF85466A1E6896CA00DAE116 /* AGTWineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF8546681E6896CA00DAE116 /* AGTWineViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,9 @@
 		DF8546611E674CC200DAE116 /* AGTWineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTWineModel.h; sourceTree = "<group>"; };
 		DF8546621E674CC200DAE116 /* AGTWineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTWineModel.m; sourceTree = "<group>"; };
 		DF8546651E674EED00DAE116 /* Baccus-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Baccus-Prefix.pch"; sourceTree = "<group>"; };
+		DF8546661E6896CA00DAE116 /* AGTWineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTWineViewController.h; sourceTree = "<group>"; };
+		DF8546671E6896CA00DAE116 /* AGTWineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTWineViewController.m; sourceTree = "<group>"; };
+		DF8546681E6896CA00DAE116 /* AGTWineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGTWineViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +69,7 @@
 				DF85465B1E67461600DAE116 /* Info.plist */,
 				DF85464A1E67461600DAE116 /* Supporting Files */,
 				DF8546641E674CC900DAE116 /* Models */,
+				DF85466B1E6896D900DAE116 /* Controllers */,
 			);
 			path = Baccus;
 			sourceTree = "<group>";
@@ -84,6 +90,16 @@
 				DF8546621E674CC200DAE116 /* AGTWineModel.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		DF85466B1E6896D900DAE116 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DF8546661E6896CA00DAE116 /* AGTWineViewController.h */,
+				DF8546671E6896CA00DAE116 /* AGTWineViewController.m */,
+				DF8546681E6896CA00DAE116 /* AGTWineViewController.xib */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +160,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF85466A1E6896CA00DAE116 /* AGTWineViewController.xib in Resources */,
 				DF85465A1E67461600DAE116 /* LaunchScreen.storyboard in Resources */,
 				DF8546571E67461600DAE116 /* Assets.xcassets in Resources */,
 			);
@@ -156,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF8546691E6896CA00DAE116 /* AGTWineViewController.m in Sources */,
 				DF85464F1E67461600DAE116 /* AGTAppDelegate.m in Sources */,
 				DF8546631E674CC200DAE116 /* AGTWineModel.m in Sources */,
 				DF85464C1E67461600DAE116 /* main.m in Sources */,
