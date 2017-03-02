@@ -7,6 +7,8 @@
 //
 
 #import "AGTAppDelegate.h"
+#import "AGTWineModel.h"
+#import "AGTWineViewController.h"
 
 @interface AGTAppDelegate ()
 
@@ -17,6 +19,26 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    //Create a model
+    AGTWineModel *tintorro = [AGTWineModel wineWithName:@"Bembibre"
+                                       wineCompanyName:@"Dominio de Tareas"
+                                                  type:@"tinto"
+                                                origin:@"El Bierzo"
+                                                grapes:@[@"Mencía"]
+                                        wineCompanyWeb:[NSURL URLWithString:@"http://www.dominiodetares.com/index.php/es/vinos/baltos/74-bembibrevinos"]
+                                                 notes:@"Este vino muestra toda la complejidad y la elegancia de la variedad Mencía. En fase visual luce un color rojo picota muy cubierto con tonalidades violáceas en el menisco. En nariz aparecen recuerdos frutales muy intensos de frutas rojas (frambuesa, cereza) y una potente ciruela negra, así como tonos florales de la gama de las rosas y violetas, vegetales muy elegantes y complementarios, hojarasca verde, tabaco y maderas aromáticas (sándalo) que le brindan un toque ciertamente perfumado."
+                                               raiting:5
+                                                 photo:[UIImage imageNamed:@"bembibre"]];
+    
+    //Create the controller
+    AGTWineViewController *wineVC = [[AGTWineViewController alloc] initWithModel:tintorro];
+    
+    //Set the root view controller
+    self.window.rootViewController = wineVC;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
