@@ -14,6 +14,8 @@
 
 @implementation AGTWineViewController
 
+#pragma mark - Init
+
 -(instancetype) initWithModel:(AGTWineModel *) aModel {
     if (self = [super initWithNibName:nil bundle:nil]) {
         _model = aModel;
@@ -22,6 +24,8 @@
     return self;
     
 }
+
+#pragma mark - Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,14 +43,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - Actions
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(IBAction)displayWeb:(id)sender {
+    NSLog(@"Go to %@", self.model.wineCompanyWeb);
 }
-*/
 
 @end
