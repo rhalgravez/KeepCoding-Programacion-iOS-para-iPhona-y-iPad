@@ -61,6 +61,8 @@
     self.wineryNameLabel.text = self.model.wineCompanyName;
     self.photoView.image = self.model.photo;
     self.grapesLabel.text = [self arrayToString: self.model.grapes];
+    
+    [self displayRating:self.model.rating];
 }
 
 -(NSString *)arrayToString: (NSArray *) array {
@@ -72,6 +74,22 @@
     }
     
     return str;
+}
+
+-(void)displayRating:(int) rating {
+    [self clearRating];
+    
+    UIImage *glass = [UIImage imageNamed:@"splitView_score_glass"];
+    
+    for (int i = 0; i < rating; i++) {
+        [[self.ratingViews objectAtIndex:i] setImage:glass];
+    }
+}
+
+-(void) clearRating {
+    for (UIImageView *imageView in self.ratingViews) {
+        imageView.image = nil;
+    }
 }
 
 @end
