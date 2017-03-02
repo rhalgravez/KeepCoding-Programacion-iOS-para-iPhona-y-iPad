@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AGTWineModel.h"
 
 @interface AGTWineViewController : UIViewController
+
+@property(strong, nonatomic) AGTWineModel *model;
+
+-(instancetype) initWithModel:(AGTWineModel *) aModel;
 
 @end

@@ -14,9 +14,24 @@
 
 @implementation AGTWineViewController
 
+-(instancetype) initWithModel:(AGTWineModel *) aModel {
+    if (self = [super initWithNibName:nil bundle:nil]) {
+        _model = aModel;
+    }
+    
+    return self;
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    NSLog(@"viewDidload");
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    NSLog(@"viewWillAppear");
 }
 
 - (void)didReceiveMemoryWarning {
