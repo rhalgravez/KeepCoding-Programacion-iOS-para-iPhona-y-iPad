@@ -13,6 +13,7 @@
 
 @property (strong, nonatomic) AGTWineModel *model;
 @property (weak, nonatomic) IBOutlet UIWebView *browser;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityView;
 
 -(instancetype) initWithModel: (AGTWineModel *)model;
 
