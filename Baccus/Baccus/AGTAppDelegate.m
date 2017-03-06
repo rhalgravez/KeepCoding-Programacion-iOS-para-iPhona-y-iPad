@@ -35,14 +35,13 @@
     
     //Create the controller
     AGTWineViewController *wineVC = [[AGTWineViewController alloc] initWithModel:tintorro];
-    AGTWebViewController *webVC = [[AGTWebViewController alloc] initWithModel:tintorro];
+//    AGTWebViewController *webVC = [[AGTWebViewController alloc] initWithModel:tintorro];
     
-    //Create a UITabBarController
-    UITabBarController *tabVC = [[UITabBarController alloc] init];
-    tabVC.viewControllers = @[wineVC, webVC];
+    //Create a UINavigationController
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:wineVC];
     
     //Set the root view controller
-    self.window.rootViewController = tabVC;
+    self.window.rootViewController = navVC;
     [self.window makeKeyAndVisible];
     
     return YES;

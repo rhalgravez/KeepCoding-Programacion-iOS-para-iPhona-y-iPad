@@ -7,6 +7,7 @@
 //
 
 #import "AGTWineViewController.h"
+#import "AGTWebViewController.h"
 
 @interface AGTWineViewController ()
 
@@ -39,7 +40,12 @@
     [super viewWillAppear:animated];
     NSLog(@"viewWillAppear");
     
+    //Prevent the nav bar to averlap the view
+    self.edgesForExtendedLayout =UIRectEdgeNone;
+    
     [self syncModelWithView];
+    
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.5 green:0.0 blue:0.13 alpha:1];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,7 +56,10 @@
 #pragma mark - Actions
 
 -(IBAction)displayWeb:(id)sender {
-    NSLog(@"Go to %@", self.model.wineCompanyWeb);
+    //Create web view controller
+    AGTWebViewController *webVC = [[AGTWebViewController alloc] initWithModel:self.model];
+    //Push to the webVC
+    [self.navigationController pushViewController:webVC animated:YES];
 }
 
 #pragma mark - Utils
