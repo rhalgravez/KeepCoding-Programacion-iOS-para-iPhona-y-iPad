@@ -9,6 +9,7 @@
 #import "AGTAppDelegate.h"
 #import "AGTWineModel.h"
 #import "AGTWineViewController.h"
+#import "AGTWebViewController.h"
 
 @interface AGTAppDelegate ()
 
@@ -33,10 +34,11 @@
                                                  photo:[UIImage imageNamed:@"bembibre"]];
     
     //Create the controller
-    AGTWineViewController *wineVC = [[AGTWineViewController alloc] initWithModel:tintorro];
+//    AGTWineViewController *wineVC = [[AGTWineViewController alloc] initWithModel:tintorro];
+    AGTWebViewController *webVC = [[AGTWebViewController alloc] initWithModel:tintorro];
     
     //Set the root view controller
-    self.window.rootViewController = wineVC;
+    self.window.rootViewController = webVC;
     [self.window makeKeyAndVisible];
     
     return YES;

@@ -24,6 +24,12 @@
     return self;
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self displayURL: self.model.wineCompanyWeb];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -43,5 +49,11 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - Utils
+
+-(void)displayURL: (NSURL *)url {
+    [self.browser loadRequest:[NSURLRequest requestWithURL:url]];
+}
 
 @end
