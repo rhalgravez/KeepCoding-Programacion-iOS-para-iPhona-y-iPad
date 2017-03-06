@@ -34,11 +34,15 @@
                                                  photo:[UIImage imageNamed:@"bembibre"]];
     
     //Create the controller
-//    AGTWineViewController *wineVC = [[AGTWineViewController alloc] initWithModel:tintorro];
+    AGTWineViewController *wineVC = [[AGTWineViewController alloc] initWithModel:tintorro];
     AGTWebViewController *webVC = [[AGTWebViewController alloc] initWithModel:tintorro];
     
+    //Create a UITabBarController
+    UITabBarController *tabVC = [[UITabBarController alloc] init];
+    tabVC.viewControllers = @[wineVC, webVC];
+    
     //Set the root view controller
-    self.window.rootViewController = webVC;
+    self.window.rootViewController = tabVC;
     [self.window makeKeyAndVisible];
     
     return YES;

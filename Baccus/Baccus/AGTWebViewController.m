@@ -19,10 +19,14 @@
 -(instancetype) initWithModel: (AGTWineModel *)model {
     if (self = [super initWithNibName:nil bundle:nil]) {
         _model = model;
+        
+        self.title = @"Web";
     }
     
     return self;
 }
+
+#pragma mark - Lifecycle
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
