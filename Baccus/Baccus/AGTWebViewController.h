@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AGTWineModel.h"
 
 @interface AGTWebViewController : UIViewController
+
+@property (strong, nonatomic) AGTWineModel *model;
+@property (weak, nonatomic) IBOutlet UIWebView *browser;
 
 @end
