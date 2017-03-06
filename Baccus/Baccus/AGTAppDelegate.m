@@ -33,15 +33,43 @@
                                                raiting:5
                                                  photo:[UIImage imageNamed:@"bembibre"]];
     
-    //Create the controller
-    AGTWineViewController *wineVC = [[AGTWineViewController alloc] initWithModel:tintorro];
-//    AGTWebViewController *webVC = [[AGTWebViewController alloc] initWithModel:tintorro];
+    AGTWineModel *albarinno = [AGTWineModel wineWithName:@"Zárate"
+                                         wineCompanyName:@"Zárate"
+                                                    type:@"white"
+                                                  origin:@"Rias Bajas"
+                                                  grapes:@[@"Albariño"]
+                                          wineCompanyWeb:[NSURL URLWithString:@"http://www.albarino-zarate.com"]
+                                                   notes:@"El albariño Zarate es un vino blanco monovarietal que pertenece a la Denominación de Origen Rías Baixas. Considerado por la crítica especializada como uno de los grandes vinos blancos del mundo, el albariño ya es todo un mito."
+                                                  raiting:4
+                                                   photo:[UIImage imageNamed:@"zarate"]];
     
-    //Create a UINavigationController
-    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:wineVC];
+    AGTWineModel *champagne = [AGTWineModel wineWithName:@"Comtes de Champagne"
+                                         wineCompanyName:@"Champagne Taittinger"
+                                                    type:@"other"
+                                                  origin:@"Champagne"
+                                                  grapes:@[@"Chardonnay"]
+                                          wineCompanyWeb:[NSURL URLWithString:@"http://www.taittinger.fr"]
+                                                   notes:@"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nunc purus. Curabitur eu velit mauris. Curabitur magna nisi, ullamcorper ac bibendum ac, laoreet et justo. Praesent vitae tortor quis diam luctus condimentum. Suspendisse potenti. In magna elit, interdum sit amet facilisis dictum, bibendum nec libero. Maecenas pellentesque posuere vehicula. Vivamus eget nisl urna, quis egestas sem. Vivamus at venenatis quam. Sed eu nulla a orci fringilla pulvinar ut eu diam. Morbi nibh nibh, bibendum at laoreet egestas, scelerisque et nisi. Donec ligula quam, semper nec bibendum in, semper eget dolor. In hac habitasse platea dictumst. Maecenas adipiscing semper rutrum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;"
+                                                  raiting:5
+                                                   photo:[UIImage imageNamed:@"comtesDeChampagne"]];
+    
+    //Create the controllers
+    AGTWineViewController *tintoVC = [[AGTWineViewController alloc] initWithModel:tintorro];
+    AGTWineViewController *blancoVC = [[AGTWineViewController alloc] initWithModel:albarinno];
+    AGTWineViewController *otroVC = [[AGTWineViewController alloc] initWithModel:champagne];
+
+    
+    //Create the UINavigationControllers
+    UINavigationController *tintoNav = [[UINavigationController alloc] initWithRootViewController:tintoVC];
+    UINavigationController *blancoNav = [[UINavigationController alloc] initWithRootViewController:blancoVC];
+    UINavigationController *otroNav = [[UINavigationController alloc] initWithRootViewController:otroVC];
+    
+    //Create the UITabBarController
+    UITabBarController *tabVC = [[UITabBarController alloc] init];
+    tabVC.viewControllers = @[tintoNav, blancoNav, otroNav];
     
     //Set the root view controller
-    self.window.rootViewController = navVC;
+    self.window.rootViewController = tabVC;
     [self.window makeKeyAndVisible];
     
     return YES;
