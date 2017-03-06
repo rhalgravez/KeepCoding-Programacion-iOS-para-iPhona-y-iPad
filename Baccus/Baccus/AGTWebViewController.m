@@ -14,6 +14,16 @@
 
 @implementation AGTWebViewController
 
+#pragma mark - Init
+
+-(instancetype) initWithModel: (AGTWineModel *)model {
+    if (self = [super initWithNibName:nil bundle:nil]) {
+        _model = model;
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
