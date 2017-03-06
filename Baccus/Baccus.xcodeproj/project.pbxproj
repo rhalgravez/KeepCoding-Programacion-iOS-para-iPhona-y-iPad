@@ -14,6 +14,8 @@
 		DF8546631E674CC200DAE116 /* AGTWineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8546621E674CC200DAE116 /* AGTWineModel.m */; };
 		DF8546691E6896CA00DAE116 /* AGTWineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8546671E6896CA00DAE116 /* AGTWineViewController.m */; };
 		DF85466A1E6896CA00DAE116 /* AGTWineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF8546681E6896CA00DAE116 /* AGTWineViewController.xib */; };
+		DF85466F1E6DD76700DAE116 /* AGTWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF85466D1E6DD76700DAE116 /* AGTWebViewController.m */; };
+		DF8546701E6DD76700DAE116 /* AGTWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF85466E1E6DD76700DAE116 /* AGTWebViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,9 @@
 		DF8546661E6896CA00DAE116 /* AGTWineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTWineViewController.h; sourceTree = "<group>"; };
 		DF8546671E6896CA00DAE116 /* AGTWineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTWineViewController.m; sourceTree = "<group>"; };
 		DF8546681E6896CA00DAE116 /* AGTWineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGTWineViewController.xib; sourceTree = "<group>"; };
+		DF85466C1E6DD76700DAE116 /* AGTWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTWebViewController.h; sourceTree = "<group>"; };
+		DF85466D1E6DD76700DAE116 /* AGTWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTWebViewController.m; sourceTree = "<group>"; };
+		DF85466E1E6DD76700DAE116 /* AGTWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGTWebViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +103,9 @@
 				DF8546661E6896CA00DAE116 /* AGTWineViewController.h */,
 				DF8546671E6896CA00DAE116 /* AGTWineViewController.m */,
 				DF8546681E6896CA00DAE116 /* AGTWineViewController.xib */,
+				DF85466C1E6DD76700DAE116 /* AGTWebViewController.h */,
+				DF85466D1E6DD76700DAE116 /* AGTWebViewController.m */,
+				DF85466E1E6DD76700DAE116 /* AGTWebViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -162,6 +170,7 @@
 			files = (
 				DF85466A1E6896CA00DAE116 /* AGTWineViewController.xib in Resources */,
 				DF85465A1E67461600DAE116 /* LaunchScreen.storyboard in Resources */,
+				DF8546701E6DD76700DAE116 /* AGTWebViewController.xib in Resources */,
 				DF8546571E67461600DAE116 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,6 +184,7 @@
 			files = (
 				DF8546691E6896CA00DAE116 /* AGTWineViewController.m in Sources */,
 				DF85464F1E67461600DAE116 /* AGTAppDelegate.m in Sources */,
+				DF85466F1E6DD76700DAE116 /* AGTWebViewController.m in Sources */,
 				DF8546631E674CC200DAE116 /* AGTWineModel.m in Sources */,
 				DF85464C1E67461600DAE116 /* main.m in Sources */,
 			);
