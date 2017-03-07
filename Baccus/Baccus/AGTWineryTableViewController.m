@@ -8,6 +8,11 @@
 
 #import "AGTWineryTableViewController.h"
 
+static int const RED_WINE_SECTION = 0;
+static int const WHITE_WINE_SECTION = 1;
+static int const OTHER_WINE_SECTION = 3;
+
+
 @interface AGTWineryTableViewController ()
 
 @end
@@ -44,13 +49,18 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    if (section == RED_WINE_SECTION) {
+        return self.model.redWineCount;
+    } else if (section == WHITE_WINE_SECTION) {
+        return self.model.whiteWineCount;
+    } else {
+        return self.model.otherWineCount;
+    }
+    
 }
 
 /*
