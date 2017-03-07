@@ -14,6 +14,18 @@
 
 @implementation AGTWineryTableViewController
 
+#pragma mark - Init
+
+-(instancetype)initWithModel:(AGTWineryModel *)model style:(UITableViewStyle)style {
+    if (self = [super initWithStyle:style]) {
+        _model = model;
+    }
+    
+    return self;
+}
+
+#pragma mark -Lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
