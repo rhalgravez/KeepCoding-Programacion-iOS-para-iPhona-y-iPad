@@ -10,4 +10,5 @@
 
 @interface AGTWineryModel : NSObject
 
+
 @end

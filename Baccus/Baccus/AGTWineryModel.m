@@ -8,6 +8,14 @@
 
 #import "AGTWineryModel.h"
 
+@interface AGTWineryModel ()
+
+@property (strong, nonatomic) NSArray *redWines;
+@property (strong, nonatomic) NSArray *whiteWines;
+@property (strong, nonatomic) NSArray *otherWines;
+
+@end
+
 @implementation AGTWineryModel
 
 @end
