@@ -8,7 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface AGTWineryModel : NSObject
 
+@property (nonatomic) int redWineCount;
+@property (nonatomic) int whiteWineCount;
+@property (nonatomic) int otherWineCount;
 
 @end
