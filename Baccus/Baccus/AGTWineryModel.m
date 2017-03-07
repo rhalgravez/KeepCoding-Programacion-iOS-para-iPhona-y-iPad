@@ -62,6 +62,19 @@
 
 #pragma mark - Querying the arrays
 
+-(int)redWineCount {
+    return (int) self.redWines.count;
+}
+
+-(int)whiteWineCount {
+    return (int) self.whiteWines.count;
+}
+
+-(int)otherWineCount {
+    return (int) self.otherWines.count;
+}
+
+
 -(AGTWineModel *)redWineAtIndex:(int)index {
     return [self.redWines objectAtIndex:index];
 }

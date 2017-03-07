@@ -11,9 +11,9 @@
 
 @interface AGTWineryModel : NSObject
 
-@property (nonatomic) int redWineCount;
-@property (nonatomic) int whiteWineCount;
-@property (nonatomic) int otherWineCount;
+@property (readonly, nonatomic) int redWineCount;
+@property (readonly, nonatomic) int whiteWineCount;
+@property (readonly, nonatomic) int otherWineCount;
 
 -(AGTWineModel *)redWineAtIndex:(int)index;
 -(AGTWineModel *)whiteWineAtIndex:(int)index;
