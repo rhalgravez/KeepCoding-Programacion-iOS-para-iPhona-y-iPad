@@ -16,6 +16,7 @@
 		DF85466A1E6896CA00DAE116 /* AGTWineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF8546681E6896CA00DAE116 /* AGTWineViewController.xib */; };
 		DF85466F1E6DD76700DAE116 /* AGTWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF85466D1E6DD76700DAE116 /* AGTWebViewController.m */; };
 		DF8546701E6DD76700DAE116 /* AGTWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF85466E1E6DD76700DAE116 /* AGTWebViewController.xib */; };
+		DF8546731E6F516800DAE116 /* AGTWineryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8546721E6F516800DAE116 /* AGTWineryModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		DF85466C1E6DD76700DAE116 /* AGTWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTWebViewController.h; sourceTree = "<group>"; };
 		DF85466D1E6DD76700DAE116 /* AGTWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTWebViewController.m; sourceTree = "<group>"; };
 		DF85466E1E6DD76700DAE116 /* AGTWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGTWebViewController.xib; sourceTree = "<group>"; };
+		DF8546711E6F516800DAE116 /* AGTWineryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTWineryModel.h; sourceTree = "<group>"; };
+		DF8546721E6F516800DAE116 /* AGTWineryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTWineryModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,8 @@
 			children = (
 				DF8546611E674CC200DAE116 /* AGTWineModel.h */,
 				DF8546621E674CC200DAE116 /* AGTWineModel.m */,
+				DF8546711E6F516800DAE116 /* AGTWineryModel.h */,
+				DF8546721E6F516800DAE116 /* AGTWineryModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 				DF85464F1E67461600DAE116 /* AGTAppDelegate.m in Sources */,
 				DF85466F1E6DD76700DAE116 /* AGTWebViewController.m in Sources */,
 				DF8546631E674CC200DAE116 /* AGTWineModel.m in Sources */,
+				DF8546731E6F516800DAE116 /* AGTWineryModel.m in Sources */,
 				DF85464C1E67461600DAE116 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
