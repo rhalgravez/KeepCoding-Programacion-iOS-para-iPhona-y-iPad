@@ -63,15 +63,35 @@ static int const OTHER_WINE_SECTION = 3;
     
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"Cell";
     
-    // Configure the cell...
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
+    if (!cell) {
+        //Creating the cell
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
+    
+    //Find out which model is for the cell
+    AGTWineModel *wine;
+    if (indexPath.section == RED_WINE_SECTION) {
+        wine = [self.model redWineAtIndex:(int)indexPath.row];
+    } else if (indexPath.section == WHITE_WINE_SECTION) {
+        wine = [self.model whiteWineAtIndex:(int)indexPath.row];
+    } else {
+        wine = [self.model otherWineAtIndex:(int)indexPath.row];
+    }
+    
+    //Set the cell's content
+    cell.imageView.image = wine.photo;
+    cell.textLabel.text = wine.name;
+    cell.detailTextLabel.text = wine.wineCompanyName;
+    
+    //Return the cell
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
