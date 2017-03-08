@@ -11,7 +11,7 @@
 
 static int const RED_WINE_SECTION = 0;
 static int const WHITE_WINE_SECTION = 1;
-static int const OTHER_WINE_SECTION = 3;
+//static int const OTHER_WINE_SECTION = 2;
 
 
 @interface AGTWineryTableViewController ()
