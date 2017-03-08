@@ -7,6 +7,7 @@
 //
 
 #import "AGTWineryTableViewController.h"
+#import "AGTWineViewController.h"
 
 static int const RED_WINE_SECTION = 0;
 static int const WHITE_WINE_SECTION = 1;
@@ -92,49 +93,24 @@ static int const OTHER_WINE_SECTION = 3;
     return cell;
 }
 
+#pragma mark - Tavle view delegate
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    //Find out which wine is selected
+    AGTWineModel *wine = nil;
+    if (indexPath.section == RED_WINE_SECTION) {
+        wine = [self.model redWineAtIndex:(int)indexPath.row];
+    } else if (indexPath.section == WHITE_WINE_SECTION) {
+        wine = [self.model whiteWineAtIndex:(int)indexPath.row];
+    } else {
+        wine = [self.model otherWineAtIndex:(int)indexPath.row];
+    }
+    
+    //Create controller for the wine
+    AGTWineViewController *wineVC = [[AGTWineViewController alloc] initWithModel:wine];
+    
+    //Push the navigation controller
+    [self.navigationController pushViewController:wineVC animated:YES];
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
