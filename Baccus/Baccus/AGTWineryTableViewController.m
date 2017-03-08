@@ -71,6 +71,17 @@ static int const WHITE_WINE_SECTION = 1;
     
 }
 
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section == RED_WINE_SECTION) {
+        return @"Red wines";
+    } else if (section == WHITE_WINE_SECTION) {
+        return @"White wines";
+    } else {
+        return @"Other Wines";
+    }
+    
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     
