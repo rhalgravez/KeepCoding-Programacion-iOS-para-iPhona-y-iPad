@@ -27,14 +27,20 @@
     //Create the model
     AGTWineryModel *winery = [[AGTWineryModel alloc] init];
     
-    //Create the table view controller
+    //Create the controllers
     AGTWineryTableViewController *tableVC = [[AGTWineryTableViewController alloc] initWithModel:winery style:UITableViewStylePlain];
+    AGTWineViewController *wineVC = [[AGTWineViewController alloc] initWithModel:[winery redWineAtIndex:0]];
     
     //Create the UINavigationControllers
-    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:tableVC];
+    UINavigationController *wineryNavVC = [[UINavigationController alloc] initWithRootViewController:tableVC];
+    UINavigationController *wineNav = [[UINavigationController alloc] initWithRootViewController:wineVC];
+    
+    //Create the SplitView
+    UISplitViewController *splitVC = [[UISplitViewController alloc] init];
+    splitVC.viewControllers = @[wineryNavVC, wineNav];
     
     //Set the root view controller
-    self.window.rootViewController = navVC;
+    self.window.rootViewController = splitVC;
     [self.window makeKeyAndVisible];
     
     return YES;
