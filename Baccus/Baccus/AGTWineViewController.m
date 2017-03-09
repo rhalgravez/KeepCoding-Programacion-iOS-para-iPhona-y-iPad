@@ -34,6 +34,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     NSLog(@"viewDidload");
+    
+    if (self.splitViewController.displayMode == UISplitViewControllerDisplayModePrimaryHidden) {
+        self.navigationItem.rightBarButtonItem = self.splitViewController.displayModeButtonItem;
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -101,6 +105,17 @@
     for (UIImageView *imageView in self.ratingViews) {
         imageView.image = nil;
     }
+}
+
+#pragma mark - UISplitViewControllerDelegate
+
+-(void)splitViewController:(UISplitViewController *)svc willChangeToDisplayMode:(UISplitViewControllerDisplayMode)displayMode {
+    if (displayMode == UISplitViewControllerDisplayModePrimaryHidden) {
+        self.navigationItem.rightBarButtonItem = svc.displayModeButtonItem;
+    } else if (displayMode == UISplitViewControllerDisplayModeAllVisible) {
+        self.navigationItem.rightBarButtonItem = nil;
+    }
+    
 }
 
 @end

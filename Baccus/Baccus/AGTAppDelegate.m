@@ -38,6 +38,7 @@
     //Create the SplitView
     UISplitViewController *splitVC = [[UISplitViewController alloc] init];
     splitVC.viewControllers = @[wineryNavVC, wineNav];
+    splitVC.delegate = wineVC;
     
     //Set the root view controller
     self.window.rootViewController = splitVC;
