@@ -7,6 +7,7 @@
 //
 
 #import "AGTWebViewController.h"
+#import "AGTWineryTableViewController.h"
 
 @interface AGTWebViewController ()
 
@@ -31,12 +32,23 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    //Add notificcation Observer
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    [notificationCenter addObserver:self selector:@selector(wineDidChange:) name:NEW_WINE_NOTIFICATION_NAME object:nil];
+    
     [self displayURL: self.model.wineCompanyWeb];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+}
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    //Remove notification Observer
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,6 +77,15 @@
     [self.browser loadRequest:[NSURLRequest requestWithURL:url]];
     
     
+}
+
+-(void)wineDidChange:(NSNotification *)notification {
+    NSDictionary *dict= notification.userInfo;
+    AGTWineModel *newWine = [dict objectForKey:WINE_KEY];
+    
+    //Update the model
+    self.model = newWine;
+    [self displayURL:self.model.wineCompanyWeb];
 }
 
 #pragma mark - UIWebViewDelegate
