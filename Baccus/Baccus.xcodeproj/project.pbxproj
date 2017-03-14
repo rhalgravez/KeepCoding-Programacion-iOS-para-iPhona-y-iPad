@@ -41,6 +41,7 @@
 		DF8546721E6F516800DAE116 /* AGTWineryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTWineryModel.m; sourceTree = "<group>"; };
 		DF8546741E6F66D700DAE116 /* AGTWineryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTWineryTableViewController.h; sourceTree = "<group>"; };
 		DF8546751E6F66D700DAE116 /* AGTWineryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTWineryTableViewController.m; sourceTree = "<group>"; };
+		DF8546771E7864E900DAE116 /* AGTWineryTableViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGTWineryTableViewControllerDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +82,7 @@
 				DF85464A1E67461600DAE116 /* Supporting Files */,
 				DF8546641E674CC900DAE116 /* Models */,
 				DF85466B1E6896D900DAE116 /* Controllers */,
+				DF8546781E7864EF00DAE116 /* Protocols */,
 			);
 			path = Baccus;
 			sourceTree = "<group>";
@@ -118,6 +120,14 @@
 				DF8546751E6F66D700DAE116 /* AGTWineryTableViewController.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		DF8546781E7864EF00DAE116 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				DF8546771E7864E900DAE116 /* AGTWineryTableViewControllerDelegate.h */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
