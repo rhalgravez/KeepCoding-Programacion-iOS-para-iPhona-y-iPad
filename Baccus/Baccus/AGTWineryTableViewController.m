@@ -9,9 +9,14 @@
 #import "AGTWineryTableViewController.h"
 #import "AGTWineViewController.h"
 
+//Private Constants
 static int const RED_WINE_SECTION = 0;
 static int const WHITE_WINE_SECTION = 1;
 //static int const OTHER_WINE_SECTION = 2;
+
+//Public Constants
+NSString * const NEW_WINE_NOTIFICATION_NAME = @"newWine";
+NSString * const WINE_KEY = @"wine";
 
 
 @interface AGTWineryTableViewController ()
@@ -125,6 +130,10 @@ static int const WHITE_WINE_SECTION = 1;
     }
     
     [self.delegate wineryTableViewController:self didSelectWine:wine];
+    
+    //Create Notification
+    NSNotification *notification = [NSNotification notificationWithName:NEW_WINE_NOTIFICATION_NAME object:self userInfo:@{WINE_KEY: wine}];
+    [[NSNotificationCenter defaultCenter] postNotification:notification];
 }
 
 @end

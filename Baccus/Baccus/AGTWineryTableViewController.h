@@ -10,6 +10,8 @@
 #import "AGTWineryModel.h"
 #import "AGTWineryTableViewControllerDelegate.h"
 
+extern NSString * const NEW_WINE_NOTIFICATION_NAME;
+extern NSString * const WINE_KEY;
 
 @interface AGTWineryTableViewController : UITableViewController
 
