@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "AGTWineModel.h"
+#import "AGTWineryTableViewControllerDelegate.h"
 
-@interface AGTWineViewController : UIViewController <UISplitViewControllerDelegate>
+@interface AGTWineViewController : UIViewController <UISplitViewControllerDelegate, AGTWineryTableViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *wineryNameLabel;

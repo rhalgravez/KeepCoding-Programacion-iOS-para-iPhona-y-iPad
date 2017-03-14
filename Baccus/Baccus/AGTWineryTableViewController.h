@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "AGTWineryModel.h"
+#import "AGTWineryTableViewControllerDelegate.h"
+
 
 @interface AGTWineryTableViewController : UITableViewController
 
 @property (strong, nonatomic) AGTWineryModel *model;
+@property (weak, nonatomic) id<AGTWineryTableViewControllerDelegate> delegate;
 
 -(instancetype)initWithModel:(AGTWineryModel *)model style:(UITableViewStyle)style;
 

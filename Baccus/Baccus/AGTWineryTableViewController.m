@@ -124,11 +124,7 @@ static int const WHITE_WINE_SECTION = 1;
         wine = [self.model otherWineAtIndex:(int)indexPath.row];
     }
     
-    //Create controller for the wine
-    AGTWineViewController *wineVC = [[AGTWineViewController alloc] initWithModel:wine];
-    
-    //Push the navigation controller
-    [self.navigationController pushViewController:wineVC animated:YES];
+    [self.delegate wineryTableViewController:self didSelectWine:wine];
 }
 
 @end

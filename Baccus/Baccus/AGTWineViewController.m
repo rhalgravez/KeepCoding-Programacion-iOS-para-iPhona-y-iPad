@@ -9,6 +9,7 @@
 #import "AGTWineViewController.h"
 #import "AGTWebViewController.h"
 
+
 @interface AGTWineViewController ()
 
 @end
@@ -21,7 +22,7 @@
     if (self = [super initWithNibName:nil bundle:nil]) {
         _model = aModel;
         
-        self.title = aModel.name;
+        
     }
     
     return self;
@@ -69,6 +70,8 @@
 #pragma mark - Utils
 
 -(void)syncModelWithView {
+    self.title = self.model.name;
+    
     self.nameLabel.text = self.model.name;
     self.typeLabel.text = self.model.type;
     self.originLabel.text = self.model.origin;
@@ -116,6 +119,12 @@
         self.navigationItem.rightBarButtonItem = nil;
     }
     
+}
+
+#pragma mark - AGTWineryTableViewControllerDelegate
+-(void)wineryTableViewController:(AGTWineryTableViewController *)wineryVC didSelectWine:(AGTWineModel *)wine {
+    self.model = wine;
+    [self syncModelWithView];
 }
 
 @end
