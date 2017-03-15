@@ -7,8 +7,11 @@
 //
 
 #import "AGTAppDelegate.h"
+#import "AGTViewController.h"
 
 @interface AGTAppDelegate ()
+
+@property (strong, nonatomic) AGTViewController *viewController;
 
 @end
 
@@ -16,7 +19,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.viewController = [[AGTViewController alloc] initWithNibName:@"AGTViewController" bundle:nil];
+    self.window.rootViewController = self.viewController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
