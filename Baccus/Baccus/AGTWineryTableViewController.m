@@ -14,6 +14,10 @@ static int const RED_WINE_SECTION = 0;
 static int const WHITE_WINE_SECTION = 1;
 //static int const OTHER_WINE_SECTION = 2;
 
+static NSString * const SECTION_KEY = @"section";
+static NSString * const ROW_KEY = @"row";
+static NSString * const LAST_WINE_KEY = @"lastWine";
+
 //Public Constants
 NSString * const NEW_WINE_NOTIFICATION_NAME = @"newWine";
 NSString * const WINE_KEY = @"wine";
@@ -134,6 +138,18 @@ NSString * const WINE_KEY = @"wine";
     //Create Notification
     NSNotification *notification = [NSNotification notificationWithName:NEW_WINE_NOTIFICATION_NAME object:self userInfo:@{WINE_KEY: wine}];
     [[NSNotificationCenter defaultCenter] postNotification:notification];
+    
+    //Save the last wine selected
+    [self saveLastSelectedWineAtSection:indexPath.section row:indexPath.row];
+}
+
+#pragma mark - NSUserDEfaults
+
+-(void) saveLastSelectedWineAtSection:(NSUInteger)section row:(NSUInteger)row {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:@{SECTION_KEY: @(section), ROW_KEY: @(row)}
+                 forKey:LAST_WINE_KEY];
+    [defaults synchronize];
 }
 
 @end
