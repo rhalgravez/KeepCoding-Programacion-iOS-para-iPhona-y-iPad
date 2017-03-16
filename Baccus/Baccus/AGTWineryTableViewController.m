@@ -152,4 +152,29 @@ NSString * const WINE_KEY = @"wine";
     [defaults synchronize];
 }
 
+-(AGTWineModel *)lasSelectedWine {
+    NSDictionary *coordinates = [[NSUserDefaults standardUserDefaults] objectForKey:LAST_WINE_KEY];
+    
+    //We need to check if there is nothing saved on LAS_WINE_KEY
+    if (!coordinates) {
+        //Maybe is the first time the user opens the app
+        //We need to set a default value, maybe the first red wine
+        
+    }
+    //Set the coordinates into an indexPath
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[coordinates[SECTION_KEY] integerValue]
+                                                inSection:[coordinates[ROW_KEY] integerValue]];
+    
+    //We return the wine according to the indexPath
+    AGTWineModel *wine;
+    if (indexPath.section == RED_WINE_SECTION) {
+        wine = [self.model redWineAtIndex:(int)indexPath.row];
+    } else if (indexPath.section == WHITE_WINE_SECTION) {
+        wine = [self.model whiteWineAtIndex:(int)indexPath.row];
+    } else {
+        wine = [self.model otherWineAtIndex:(int)indexPath.row];
+    }
+    return wine;
+}
+
 @end
