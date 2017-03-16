@@ -20,4 +20,6 @@ extern NSString * const WINE_KEY;
 
 -(instancetype)initWithModel:(AGTWineryModel *)model style:(UITableViewStyle)style;
 
+-(AGTWineModel *)lasSelectedWine;
+
 @end

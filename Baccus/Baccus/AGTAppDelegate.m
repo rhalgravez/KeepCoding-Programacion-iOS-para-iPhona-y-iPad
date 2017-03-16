@@ -29,7 +29,7 @@
     
     //Create the controllers
     AGTWineryTableViewController *tableVC = [[AGTWineryTableViewController alloc] initWithModel:winery style:UITableViewStylePlain];
-    AGTWineViewController *wineVC = [[AGTWineViewController alloc] initWithModel:[winery redWineAtIndex:0]];
+    AGTWineViewController *wineVC = [[AGTWineViewController alloc] initWithModel:[tableVC lasSelectedWine]];
     
     //Create the UINavigationControllers
     UINavigationController *wineryNavVC = [[UINavigationController alloc] initWithRootViewController:tableVC];
