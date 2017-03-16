@@ -102,14 +102,7 @@ NSString * const WINE_KEY = @"wine";
     }
     
     //Find out which model is for the cell
-    AGTWineModel *wine;
-    if (indexPath.section == RED_WINE_SECTION) {
-        wine = [self.model redWineAtIndex:(int)indexPath.row];
-    } else if (indexPath.section == WHITE_WINE_SECTION) {
-        wine = [self.model whiteWineAtIndex:(int)indexPath.row];
-    } else {
-        wine = [self.model otherWineAtIndex:(int)indexPath.row];
-    }
+    AGTWineModel *wine = [self wineForIndexPath:indexPath];
     
     //Set the cell's content
     cell.imageView.image = wine.photo;
@@ -124,14 +117,8 @@ NSString * const WINE_KEY = @"wine";
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //Find out which wine is selected
-    AGTWineModel *wine = nil;
-    if (indexPath.section == RED_WINE_SECTION) {
-        wine = [self.model redWineAtIndex:(int)indexPath.row];
-    } else if (indexPath.section == WHITE_WINE_SECTION) {
-        wine = [self.model whiteWineAtIndex:(int)indexPath.row];
-    } else {
-        wine = [self.model otherWineAtIndex:(int)indexPath.row];
-    }
+    AGTWineModel *wine = [self wineForIndexPath:indexPath];
+    
     
     [self.delegate wineryTableViewController:self didSelectWine:wine];
     
@@ -166,16 +153,8 @@ NSString * const WINE_KEY = @"wine";
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[coordinates[SECTION_KEY] integerValue]
                                                 inSection:[coordinates[ROW_KEY] integerValue]];
     
-    //We return the wine according to the indexPath
-    AGTWineModel *wine;
-    if (indexPath.section == RED_WINE_SECTION) {
-        wine = [self.model redWineAtIndex:(int)indexPath.row];
-    } else if (indexPath.section == WHITE_WINE_SECTION) {
-        wine = [self.model whiteWineAtIndex:(int)indexPath.row];
-    } else {
-        wine = [self.model otherWineAtIndex:(int)indexPath.row];
-    }
-    return wine;
+    
+    return [self wineForIndexPath:indexPath];
 }
 
 -(NSDictionary *)setDefaults {
@@ -191,5 +170,17 @@ NSString * const WINE_KEY = @"wine";
     return defaultWineCoordinates;
 }
 
-
+#pragma mark -  Utils
+-(AGTWineModel *)wineForIndexPath:(NSIndexPath *)indexPath {
+    AGTWineModel *wine;
+    if (indexPath.section == RED_WINE_SECTION) {
+        wine = [self.model redWineAtIndex:(int)indexPath.row];
+    } else if (indexPath.section == WHITE_WINE_SECTION) {
+        wine = [self.model whiteWineAtIndex:(int)indexPath.row];
+    } else {
+        wine = [self.model otherWineAtIndex:(int)indexPath.row];
+    }
+    
+    return wine;
+}
 @end
