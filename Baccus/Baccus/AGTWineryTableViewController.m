@@ -150,8 +150,8 @@ NSString * const WINE_KEY = @"wine";
         
     }
     //Set the coordinates into an indexPath
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[coordinates[SECTION_KEY] integerValue]
-                                                inSection:[coordinates[ROW_KEY] integerValue]];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[coordinates[ROW_KEY] integerValue]
+                                                inSection:[coordinates[SECTION_KEY] integerValue]];
     
     
     return [self wineForIndexPath:indexPath];
