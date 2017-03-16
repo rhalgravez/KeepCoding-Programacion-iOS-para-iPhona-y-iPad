@@ -159,6 +159,7 @@ NSString * const WINE_KEY = @"wine";
     if (!coordinates) {
         //Maybe is the first time the user opens the app
         //We need to set a default value, maybe the first red wine
+        coordinates = [self setDefaults];
         
     }
     //Set the coordinates into an indexPath
@@ -176,5 +177,19 @@ NSString * const WINE_KEY = @"wine";
     }
     return wine;
 }
+
+-(NSDictionary *)setDefaults {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    //By default we show the first red wine
+    NSDictionary *defaultWineCoordinates = @{SECTION_KEY: @(RED_WINE_SECTION), ROW_KEY: @0};
+    
+    //set the default value to de NSUserEfaults
+    [defaults setObject:defaultWineCoordinates forKey:LAST_WINE_KEY];
+    [defaults synchronize];
+    
+    return defaultWineCoordinates;
+}
+
 
 @end
