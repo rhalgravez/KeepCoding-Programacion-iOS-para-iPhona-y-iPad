@@ -12,6 +12,25 @@ static int const NO_RATING = -1;
 
 @implementation AGTWineModel
 
+//When creating a readonly property with a acustom getter, the compiler think it´s not
+//going to need an instance variable. Bu we are going to need it, so we have to put our own
+//synthesize
+
+@synthesize  photo = _photo;
+
+#pragma mark -  Properties
+-(UIImage *)photo {
+    //This is going to block the app for a second, but because we don´t know
+    //how to do it in background, for the moment we are going to to it like this
+    
+    //Lazy loading
+    if (!_photo) {
+        _photo = [UIImage imageWithData:[NSData dataWithContentsOfURL:self.photoURL]];
+    }
+    return _photo;
+}
+
+
 #pragma mark -  Class Constructor Methods
 
 +(instancetype) wineWithName: (NSString *)aName
@@ -22,7 +41,7 @@ static int const NO_RATING = -1;
               wineCompanyWeb: (NSURL *) aURL
                        notes: (NSString *) aNotes
                      raiting: (int) aRating
-                       photo: (UIImage *) aPhoto {
+                    photoURL: (NSURL *)aPhotoURL {
     
     return [[self alloc] initWithName:aName
                       wineCompanyName:aWineCompanyName
@@ -32,7 +51,7 @@ static int const NO_RATING = -1;
                        wineCompanyWeb:aURL
                                 notes:aNotes
                               raiting:aRating
-                                photo:aPhoto];
+                             photoURL: aPhotoURL];
 }
 
 +(instancetype) wineWithName: (NSString *) aName
@@ -56,7 +75,7 @@ static int const NO_RATING = -1;
               wineCompanyWeb: (NSURL *) aURL
                        notes: (NSString *) aNotes
                      raiting: (int) aRating
-                       photo: (UIImage *) aPhoto {
+                    photoURL: (NSURL *) aPhotoURL {
     if (self = [super init]) {
         //Assigning the parameters to the instance variables
         _name = aName;
@@ -67,7 +86,7 @@ static int const NO_RATING = -1;
         _wineCompanyWeb = aURL;
         _notes = aNotes;
         _rating = aRating;
-        _photo = aPhoto;
+        _photoURL = aPhotoURL;
     }
     
     return self;
@@ -86,7 +105,7 @@ static int const NO_RATING = -1;
                wineCompanyWeb:nil
                         notes:nil
                       raiting:NO_RATING
-                        photo:nil];
+                     photoURL:nil];
 }
 
 @end

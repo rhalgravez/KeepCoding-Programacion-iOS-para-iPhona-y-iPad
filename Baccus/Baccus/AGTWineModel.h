@@ -11,7 +11,8 @@
 @interface AGTWineModel : NSObject
 
 @property (strong, nonatomic) NSString *type;
-@property (strong, nonatomic) UIImage *photo;
+@property (strong, nonatomic, readonly) UIImage *photo;
+@property (strong, nonatomic) NSURL *photoURL;
 @property (strong, nonatomic) NSURL *wineCompanyWeb;
 @property (strong, nonatomic) NSString *notes;
 @property (strong, nonatomic) NSString *origin;
@@ -33,7 +34,7 @@
               wineCompanyWeb: (NSURL *) aURL
                        notes: (NSString *) aNotes
                      raiting: (int) aRating
-                       photo: (UIImage *) aPhoto;
+                       photoURL: (NSURL *)aPhotoURL;
 
 +(instancetype) wineWithName: (NSString *) aName
              wineCompanyName: (NSString *) aWineCompanyName
@@ -50,7 +51,7 @@
               wineCompanyWeb: (NSURL *) aURL
                        notes: (NSString *) aNotes
                      raiting: (int) aRating
-                       photo: (UIImage *) aPhoto NS_DESIGNATED_INITIALIZER;
+                    photoURL: (NSURL *) aPhotoURL NS_DESIGNATED_INITIALIZER;
 
 -(instancetype)init NS_UNAVAILABLE;
 
