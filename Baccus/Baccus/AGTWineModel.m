@@ -116,11 +116,12 @@ static int const NO_RATING = -1;
                          type:[aDictionary objectForKey:@"type"]
                        origin:[aDictionary objectForKey:@"origin"]
                        grapes:[self extractGrapesFromJSONArray:[aDictionary objectForKey:@"grapes"]]
-               wineCompanyWeb:[aDictionary objectForKey:@"wineCompanyWeb"]
+               wineCompanyWeb:[aDictionary objectForKey:@"wine_web"]
                         notes:[aDictionary objectForKey:@"notes"]
                       raiting:[[aDictionary objectForKey:@"rating"] intValue]
                      photoURL:[NSURL URLWithString:[aDictionary objectForKey:@"picture"]]];
 }
+
             
 #pragma mark - Utils
 -(NSArray *) extractGrapesFromJSONArray:(NSArray *)JSONArray {
@@ -130,6 +131,31 @@ static int const NO_RATING = -1;
         [grapes addObject:[dict objectForKey:@"grapes"]];
     }
     return grapes;
+}
+
+-(NSArray *)packGrapesIntoJSONArray {
+    NSMutableArray *jsonArray = [NSMutableArray arrayWithCapacity:self.grapes.count];
+    for (NSString *grape in self.grapes) {
+        [jsonArray addObject:@{@"grape": grape}];
+    }
+    return jsonArray;
+}
+
+-(NSDictionary *)proxyForJSON {
+    return  @{@"name"           : self.name,
+              @"wineCompanyNAme": self.wineCompanyName,
+              @"wine_web"       : [self.wineCompanyWeb path],
+              @"type"           : self.type,
+              @"origin"         : self.origin,
+              @"grapes"         : self.grapes,
+              @"notes"          : self.notes,
+              @"rating"         : @(self.rating),
+              @"picture"        : [self.photoURL path]
+              };
+}
+
+-(NSString *)description {
+    return [NSString stringWithFormat:@"Name %@\nCompany name: %@\nType: %@\nOrigin: %@\nGrapes: %@\nWine comnay web: %@\nNotes: %@\n Rating: %d\n", self.name, self.wineCompanyName, self.type, self.origin, self.grapes, self.wineCompanyWeb, self.notes, self.rating];
 }
 
 @end
