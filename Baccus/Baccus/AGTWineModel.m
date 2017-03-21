@@ -108,4 +108,28 @@ static int const NO_RATING = -1;
                      photoURL:nil];
 }
 
+#pragma mark - Init from JSON
+
+-(instancetype) initWithDictionary:(NSDictionary *)aDictionary {
+    return [self initWithName:[aDictionary objectForKey:@"name"]
+              wineCompanyName:[aDictionary objectForKey:@"wineCompnayName"]
+                         type:[aDictionary objectForKey:@"type"]
+                       origin:[aDictionary objectForKey:@"origin"]
+                       grapes:[self extractGrapesFromJSONArray:[aDictionary objectForKey:@"grapes"]]
+               wineCompanyWeb:[aDictionary objectForKey:@"wineCompanyWeb"]
+                        notes:[aDictionary objectForKey:@"notes"]
+                      raiting:[[aDictionary objectForKey:@"rating"] intValue]
+                     photoURL:[NSURL URLWithString:[aDictionary objectForKey:@"picture"]]];
+}
+            
+#pragma mark - Utils
+-(NSArray *) extractGrapesFromJSONArray:(NSArray *)JSONArray {
+    NSMutableArray *grapes = [NSMutableArray arrayWithCapacity:JSONArray.count];
+    
+    for (NSDictionary *dict in JSONArray) {
+        [grapes addObject:[dict objectForKey:@"grapes"]];
+    }
+    return grapes;
+}
+
 @end

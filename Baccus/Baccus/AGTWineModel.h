@@ -60,4 +60,7 @@
                         type: (NSString *) aType
                       origin: (NSString *) anOrigin;
 
+#pragma mark - Init from JSON
+-(instancetype) initWithDictionary:(NSDictionary *)aDictionary;
+
 @end
