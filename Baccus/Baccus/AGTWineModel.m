@@ -112,7 +112,7 @@ static int const NO_RATING = -1;
 
 -(instancetype) initWithDictionary:(NSDictionary *)aDictionary {
     return [self initWithName:[aDictionary objectForKey:@"name"]
-              wineCompanyName:[aDictionary objectForKey:@"wineCompnayName"]
+              wineCompanyName:[aDictionary objectForKey:@"company"]
                          type:[aDictionary objectForKey:@"type"]
                        origin:[aDictionary objectForKey:@"origin"]
                        grapes:[self extractGrapesFromJSONArray:[aDictionary objectForKey:@"grapes"]]
@@ -143,7 +143,7 @@ static int const NO_RATING = -1;
 
 -(NSDictionary *)proxyForJSON {
     return  @{@"name"           : self.name,
-              @"wineCompanyNAme": self.wineCompanyName,
+              @"company": self.wineCompanyName,
               @"wine_web"       : [self.wineCompanyWeb path],
               @"type"           : self.type,
               @"origin"         : self.origin,
