@@ -19,6 +19,7 @@
 
 @implementation AGTAppDelegate
 
+#pragma mark - App State Changes and System Events
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -27,24 +28,16 @@
     //Create the model
     AGTWineryModel *winery = [[AGTWineryModel alloc] init];
     
-    //Create the controllers
-    AGTWineryTableViewController *tableVC = [[AGTWineryTableViewController alloc] initWithModel:winery style:UITableViewStylePlain];
-    AGTWineViewController *wineVC = [[AGTWineViewController alloc] initWithModel:[tableVC lasSelectedWine]];
-    
-    //Create the UINavigationControllers
-    UINavigationController *wineryNavVC = [[UINavigationController alloc] initWithRootViewController:tableVC];
-    UINavigationController *wineNav = [[UINavigationController alloc] initWithRootViewController:wineVC];
-    
-    //Create the SplitView
-    UISplitViewController *splitVC = [[UISplitViewController alloc] init];
-    splitVC.viewControllers = @[wineryNavVC, wineNav];
-    
-    //Set Delegates
-    splitVC.delegate = wineVC;
-    tableVC.delegate = wineVC;
+    //Configure controllers, delegates deppending the device
+    UIViewController *rootVC;
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad ) {
+        rootVC = [self rootViewControllerForPadWithModel:winery];
+    } else {
+        rootVC = [self rootViewControllerForPhoneWithModel:winery];
+    }
     
     //Set the root view controller
-    self.window.rootViewController = splitVC;
+    self.window.rootViewController = rootVC;
     [self.window makeKeyAndVisible];
     
     return YES;
@@ -77,5 +70,39 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+#pragma mark - Utils
+
+-(UIViewController *)rootViewControllerForPadWithModel:(AGTWineryModel *)model {
+    //Create the controllers
+    AGTWineryTableViewController *tableVC = [[AGTWineryTableViewController alloc] initWithModel:model style:UITableViewStylePlain];
+    AGTWineViewController *wineVC = [[AGTWineViewController alloc] initWithModel:[tableVC lasSelectedWine]];
+    
+    //Create the UINavigationControllers
+    UINavigationController *wineryNavVC = [[UINavigationController alloc] initWithRootViewController:tableVC];
+    UINavigationController *wineNav = [[UINavigationController alloc] initWithRootViewController:wineVC];
+    
+    //Create the SplitView
+    UISplitViewController *splitVC = [[UISplitViewController alloc] init];
+    splitVC.viewControllers = @[wineryNavVC, wineNav];
+    
+    //Set Delegates
+    splitVC.delegate = wineVC;
+    tableVC.delegate = wineVC;
+    
+    return splitVC;
+}
+
+-(UIViewController *)rootViewControllerForPhoneWithModel:(AGTWineryModel *)model {
+    //Create the controller
+    AGTWineryTableViewController *tableVC = [[AGTWineryTableViewController alloc] initWithModel:model style:UITableViewStylePlain];
+    
+    //Create navigation Controller
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:tableVC];
+    
+    //Set Delegate
+    tableVC.delegate = tableVC;
+    
+    return navController;
+}
 
 @end
