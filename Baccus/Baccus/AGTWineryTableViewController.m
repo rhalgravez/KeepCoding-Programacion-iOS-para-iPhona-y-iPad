@@ -113,21 +113,33 @@ NSString * const WINE_KEY = @"wine";
     return cell;
 }
 
-#pragma mark - Tavle view delegate
+#pragma mark - Table view delegate
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //Find out which wine is selected
     AGTWineModel *wine = [self wineForIndexPath:indexPath];
     
     
-    [self.delegate wineryTableViewController:self didSelectWine:wine];
-    
-    //Create Notification
-    NSNotification *notification = [NSNotification notificationWithName:NEW_WINE_NOTIFICATION_NAME object:self userInfo:@{WINE_KEY: wine}];
-    [[NSNotificationCenter defaultCenter] postNotification:notification];
-    
-    //Save the last wine selected
-    [self saveLastSelectedWineAtSection:indexPath.section row:indexPath.row];
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
+        //If we are in iPhone we do a push
+        [self.delegate wineryTableViewController:self didSelectWine:wine];
+    } else {
+        //If we are in an iPad
+        [self.delegate wineryTableViewController:self didSelectWine:wine];
+        
+        //Create Notification
+        NSNotification *notification = [NSNotification notificationWithName:NEW_WINE_NOTIFICATION_NAME object:self userInfo:@{WINE_KEY: wine}];
+        [[NSNotificationCenter defaultCenter] postNotification:notification];
+        
+        //Save the last wine selected
+        [self saveLastSelectedWineAtSection:indexPath.section row:indexPath.row];
+    }
+}
+
+#pragma mark - AGTWineryTableViewControllerDelegate
+-(void)wineryTableViewController:(AGTWineryTableViewController *)wineryVC didSelectWine:(AGTWineModel *)wine {
+    AGTWineViewController *wineVC = [[AGTWineViewController alloc] initWithModel:wine];
+    [self.navigationController pushViewController:wineVC animated:YES];
 }
 
 #pragma mark - NSUserDEfaults

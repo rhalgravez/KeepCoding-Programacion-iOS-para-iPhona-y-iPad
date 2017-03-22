@@ -13,7 +13,7 @@
 extern NSString * const NEW_WINE_NOTIFICATION_NAME;
 extern NSString * const WINE_KEY;
 
-@interface AGTWineryTableViewController : UITableViewController
+@interface AGTWineryTableViewController : UITableViewController <AGTWineryTableViewControllerDelegate>
 
 @property (strong, nonatomic) AGTWineryModel *model;
 @property (weak, nonatomic) id<AGTWineryTableViewControllerDelegate> delegate;
