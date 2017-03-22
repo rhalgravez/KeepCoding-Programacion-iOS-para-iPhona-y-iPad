@@ -128,7 +128,7 @@ static int const NO_RATING = -1;
     NSMutableArray *grapes = [NSMutableArray arrayWithCapacity:JSONArray.count];
     
     for (NSDictionary *dict in JSONArray) {
-        [grapes addObject:[dict objectForKey:@"grapes"]];
+        [grapes addObject:[dict objectForKey:@"grape"]];
     }
     return grapes;
 }
