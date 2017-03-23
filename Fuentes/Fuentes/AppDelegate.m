@@ -7,6 +7,7 @@
 //
 
 #import "AGTAppDelegate.h"
+#import "AGTFontsTableViewCOntroller.h"
 
 @interface AGTAppDelegate ()
 
@@ -17,6 +18,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    AGTFontsTableViewController *tableVC = [[AGTFontsTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:tableVC];
+    
+    self.window.rootViewController = navVC;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

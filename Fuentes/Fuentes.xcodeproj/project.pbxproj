@@ -11,6 +11,7 @@
 		DFF4DD781E84816800D9C91E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF4DD771E84816800D9C91E /* AppDelegate.m */; };
 		DFF4DD801E84816800D9C91E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFF4DD7F1E84816800D9C91E /* Assets.xcassets */; };
 		DFF4DD831E84816800D9C91E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFF4DD811E84816800D9C91E /* LaunchScreen.storyboard */; };
+		DFF4DD8C1E8483DF00D9C91E /* AGTFontsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF4DD8B1E8483DF00D9C91E /* AGTFontsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,8 @@
 		DFF4DD7F1E84816800D9C91E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFF4DD821E84816800D9C91E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFF4DD841E84816800D9C91E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFF4DD8A1E8483DF00D9C91E /* AGTFontsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTFontsTableViewController.h; sourceTree = "<group>"; };
+		DFF4DD8B1E8483DF00D9C91E /* AGTFontsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTFontsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +62,8 @@
 				DFF4DD811E84816800D9C91E /* LaunchScreen.storyboard */,
 				DFF4DD841E84816800D9C91E /* Info.plist */,
 				DFF4DD731E84816800D9C91E /* Supporting Files */,
+				DFF4DD8A1E8483DF00D9C91E /* AGTFontsTableViewController.h */,
+				DFF4DD8B1E8483DF00D9C91E /* AGTFontsTableViewController.m */,
 			);
 			path = Fuentes;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFF4DD8C1E8483DF00D9C91E /* AGTFontsTableViewController.m in Sources */,
 				DFF4DD781E84816800D9C91E /* AppDelegate.m in Sources */,
 				DFF4DD751E84816800D9C91E /* main.m in Sources */,
 			);
