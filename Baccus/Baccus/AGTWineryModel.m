@@ -29,7 +29,7 @@ static NSString * const WHITE_WINE_KEY = @"Blanco";
         NSError *error = nil;
 //        NSString *description = [NSString stringWithFormat:@"Error while downloading the json data. Expect an array of dictionaries and got nil instead."];
         
-        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://localhost/BaccusWinery.json"]];
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://static.keepcoding.io/baccus/wines.json"]];
         
         if (data) {
             //There was no error

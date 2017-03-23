@@ -122,7 +122,8 @@ NSString * const WINE_KEY = @"wine";
     
     if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
         //If we are in iPhone we do a push
-        [self.delegate wineryTableViewController:self didSelectWine:wine];
+        AGTWineViewController *wineVC = [[AGTWineViewController alloc] initWithModel:wine];
+        [self.navigationController pushViewController:wineVC animated:YES];
     } else {
         //If we are in an iPad
         [self.delegate wineryTableViewController:self didSelectWine:wine];
@@ -134,12 +135,6 @@ NSString * const WINE_KEY = @"wine";
         //Save the last wine selected
         [self saveLastSelectedWineAtSection:indexPath.section row:indexPath.row];
     }
-}
-
-#pragma mark - AGTWineryTableViewControllerDelegate
--(void)wineryTableViewController:(AGTWineryTableViewController *)wineryVC didSelectWine:(AGTWineModel *)wine {
-    AGTWineViewController *wineVC = [[AGTWineViewController alloc] initWithModel:wine];
-    [self.navigationController pushViewController:wineVC animated:YES];
 }
 
 #pragma mark - NSUserDEfaults

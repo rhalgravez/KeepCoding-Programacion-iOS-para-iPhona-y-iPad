@@ -99,9 +99,6 @@
     //Create navigation Controller
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:tableVC];
     
-    //Set Delegate
-    tableVC.delegate = tableVC;
-    
     return navController;
 }
 
