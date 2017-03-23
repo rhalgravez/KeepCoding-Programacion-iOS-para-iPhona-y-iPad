@@ -10,9 +10,24 @@
 
 @interface AGTFontsTableViewController ()
 
+@property (nonatomic, strong) NSArray *familyNames;
+
 @end
 
 @implementation AGTFontsTableViewController
+#pragma mark - Init
+
+-(instancetype)initWithStyle:(UITableViewStyle)style {
+    self = [super initWithStyle:style];
+    if (self) {
+        _familyNames = [[UIFont familyNames] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
+        self.title = @"Fontopaedia";
+    }
+    
+    return  self;
+}
+
+#pragma mark - Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
