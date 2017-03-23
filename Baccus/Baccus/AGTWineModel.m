@@ -116,7 +116,7 @@ static int const NO_RATING = -1;
                          type:[aDictionary objectForKey:@"type"]
                        origin:[aDictionary objectForKey:@"origin"]
                        grapes:[self extractGrapesFromJSONArray:[aDictionary objectForKey:@"grapes"]]
-               wineCompanyWeb:[aDictionary objectForKey:@"wine_web"]
+               wineCompanyWeb:[NSURL URLWithString:[aDictionary objectForKey:@"wine_web"]]
                         notes:[aDictionary objectForKey:@"notes"]
                       raiting:[[aDictionary objectForKey:@"rating"] intValue]
                      photoURL:[NSURL URLWithString:[aDictionary objectForKey:@"picture"]]];
