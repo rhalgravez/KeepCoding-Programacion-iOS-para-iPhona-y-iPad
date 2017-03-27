@@ -11,10 +11,18 @@
 @interface AGTFontViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *fontNameLabel;
 @property (weak, nonatomic) IBOutlet UITextView *fontTextView;
+@property (strong, nonatomic) UIFont *font;
 
 @end
 
 @implementation AGTFontViewController
+
+-(instancetype) initWithFont:(UIFont *)font {
+    if ([super initWithNibName:nil bundle:nil]) {
+        _font = font;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -10,4 +10,6 @@
 
 @interface AGTFontViewController : UIViewController
 
+-(instancetype) initWithFont:(UIFont *)font;
+
 @end
