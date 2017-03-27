@@ -14,6 +14,7 @@
 		DFF4DD8C1E8483DF00D9C91E /* AGTFontsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF4DD8B1E8483DF00D9C91E /* AGTFontsTableViewController.m */; };
 		DFF4DD901E8988CF00D9C91E /* AGTFontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF4DD8E1E8988CF00D9C91E /* AGTFontViewController.m */; };
 		DFF4DD911E8988CF00D9C91E /* AGTFontViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFF4DD8F1E8988CF00D9C91E /* AGTFontViewController.xib */; };
+		DFF4DD941E89BCA100D9C91E /* Starjedi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFF4DD921E89BC8000D9C91E /* Starjedi.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		DFF4DD8D1E8988CF00D9C91E /* AGTFontViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTFontViewController.h; sourceTree = "<group>"; };
 		DFF4DD8E1E8988CF00D9C91E /* AGTFontViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTFontViewController.m; sourceTree = "<group>"; };
 		DFF4DD8F1E8988CF00D9C91E /* AGTFontViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGTFontViewController.xib; sourceTree = "<group>"; };
+		DFF4DD921E89BC8000D9C91E /* Starjedi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Starjedi.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				DFF4DD8D1E8988CF00D9C91E /* AGTFontViewController.h */,
 				DFF4DD8E1E8988CF00D9C91E /* AGTFontViewController.m */,
 				DFF4DD8F1E8988CF00D9C91E /* AGTFontViewController.xib */,
+				DFF4DD931E89BC8500D9C91E /* Resources */,
 			);
 			path = Fuentes;
 			sourceTree = "<group>";
@@ -82,6 +85,14 @@
 				DFF4DD741E84816800D9C91E /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DFF4DD931E89BC8500D9C91E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DFF4DD921E89BC8000D9C91E /* Starjedi.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +155,7 @@
 			files = (
 				DFF4DD911E8988CF00D9C91E /* AGTFontViewController.xib in Resources */,
 				DFF4DD831E84816800D9C91E /* LaunchScreen.storyboard in Resources */,
+				DFF4DD941E89BCA100D9C91E /* Starjedi.ttf in Resources */,
 				DFF4DD801E84816800D9C91E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
