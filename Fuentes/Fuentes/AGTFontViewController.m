@@ -29,6 +29,14 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.fontTextView.font = self.font;
+    self.fontNameLabel.text = self.font.fontName;
+    self.fontNameLabel.font = [self.font fontWithSize:30.0];
+    self.fontNameLabel.adjustsFontSizeToFitWidth = YES;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
