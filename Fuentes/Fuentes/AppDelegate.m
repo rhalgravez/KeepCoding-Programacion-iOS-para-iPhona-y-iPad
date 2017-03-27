@@ -68,7 +68,10 @@
     
     [[UITableViewHeaderFooterView appearance] setTintColor:darkRed];//Cgange heaer background color
     [[UILabel appearanceWhenContainedInInstancesOfClasses:@[[UITableViewHeaderFooterView class]]] setTextColor:[UIColor greenColor]];//Change uilabel in header color
-    [[UINavigationBar appearance] setBarTintColor:darkBlue];//Change navBar background color
+    
+    //Set a background image to the navigation bar
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navBarBackgroundPortrait"] forBarMetrics:UIBarMetricsDefault];//Change navBar background image
+    
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: clearGrey}];//Change text color in navbar
 }
 
