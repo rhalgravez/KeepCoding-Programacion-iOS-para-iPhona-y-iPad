@@ -9,6 +9,8 @@
 #import "AGTFontViewController.h"
 
 @interface AGTFontViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *fontNameLabel;
+@property (weak, nonatomic) IBOutlet UITextView *fontTextView;
 
 @end
 
