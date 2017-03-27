@@ -72,7 +72,13 @@
     //Set a background image to the navigation bar
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navBarBackgroundPortrait"] forBarMetrics:UIBarMetricsDefault];//Change navBar background image
     
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: clearGrey}];//Change text color in navbar
+    //Set shadow attribute
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.8];
+    shadow.shadowOffset = CGSizeMake(0.0f, 1.0f);
+    
+    //Set text to the navigation bar
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], NSShadowAttributeName: shadow, NSFontAttributeName: [UIFont fontWithName:@"Star Jedi" size:28]}];
 }
 
 
