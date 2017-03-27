@@ -19,6 +19,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    //Configure appeareance
+    [self customizeAppearance];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     AGTFontsTableViewController *tableVC = [[AGTFontsTableViewController alloc] initWithStyle:UITableViewStylePlain];
@@ -55,6 +58,18 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Utils
+-(void)customizeAppearance {
+    UIColor *darkBlue = [UIColor colorWithRed:10.0/255.0 green:17.0/255.0 blue:31.0/255.0 alpha:1];
+    UIColor *darkRed = [UIColor colorWithRed:168.0/255.0 green:11.0/255.0 blue:31.0/255.0 alpha:0.5];
+    UIColor *clearGrey = [UIColor colorWithRed:227.0/255.0 green:227.0/255.0 blue:227.0/255.0 alpha:1];
+    
+    [[UITableViewHeaderFooterView appearance] setTintColor:darkRed];//Cgange heaer background color
+    [[UILabel appearanceWhenContainedInInstancesOfClasses:@[[UITableViewHeaderFooterView class]]] setTextColor:[UIColor greenColor]];//Change uilabel in header color
+    [[UINavigationBar appearance] setBarTintColor:darkBlue];//Change navBar background color
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: clearGrey}];//Change text color in navbar
 }
 
 
