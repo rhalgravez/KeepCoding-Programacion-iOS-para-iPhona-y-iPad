@@ -12,6 +12,8 @@
 		DFF4DD801E84816800D9C91E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFF4DD7F1E84816800D9C91E /* Assets.xcassets */; };
 		DFF4DD831E84816800D9C91E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFF4DD811E84816800D9C91E /* LaunchScreen.storyboard */; };
 		DFF4DD8C1E8483DF00D9C91E /* AGTFontsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF4DD8B1E8483DF00D9C91E /* AGTFontsTableViewController.m */; };
+		DFF4DD901E8988CF00D9C91E /* AGTFontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF4DD8E1E8988CF00D9C91E /* AGTFontViewController.m */; };
+		DFF4DD911E8988CF00D9C91E /* AGTFontViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFF4DD8F1E8988CF00D9C91E /* AGTFontViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,9 @@
 		DFF4DD841E84816800D9C91E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFF4DD8A1E8483DF00D9C91E /* AGTFontsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTFontsTableViewController.h; sourceTree = "<group>"; };
 		DFF4DD8B1E8483DF00D9C91E /* AGTFontsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTFontsTableViewController.m; sourceTree = "<group>"; };
+		DFF4DD8D1E8988CF00D9C91E /* AGTFontViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTFontViewController.h; sourceTree = "<group>"; };
+		DFF4DD8E1E8988CF00D9C91E /* AGTFontViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTFontViewController.m; sourceTree = "<group>"; };
+		DFF4DD8F1E8988CF00D9C91E /* AGTFontViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGTFontViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +69,9 @@
 				DFF4DD731E84816800D9C91E /* Supporting Files */,
 				DFF4DD8A1E8483DF00D9C91E /* AGTFontsTableViewController.h */,
 				DFF4DD8B1E8483DF00D9C91E /* AGTFontsTableViewController.m */,
+				DFF4DD8D1E8988CF00D9C91E /* AGTFontViewController.h */,
+				DFF4DD8E1E8988CF00D9C91E /* AGTFontViewController.m */,
+				DFF4DD8F1E8988CF00D9C91E /* AGTFontViewController.xib */,
 			);
 			path = Fuentes;
 			sourceTree = "<group>";
@@ -134,6 +142,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFF4DD911E8988CF00D9C91E /* AGTFontViewController.xib in Resources */,
 				DFF4DD831E84816800D9C91E /* LaunchScreen.storyboard in Resources */,
 				DFF4DD801E84816800D9C91E /* Assets.xcassets in Resources */,
 			);
@@ -146,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFF4DD901E8988CF00D9C91E /* AGTFontViewController.m in Sources */,
 				DFF4DD8C1E8483DF00D9C91E /* AGTFontsTableViewController.m in Sources */,
 				DFF4DD781E84816800D9C91E /* AppDelegate.m in Sources */,
 				DFF4DD751E84816800D9C91E /* main.m in Sources */,
