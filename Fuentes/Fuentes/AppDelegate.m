@@ -79,6 +79,16 @@
     
     //Set text to the navigation bar
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], NSShadowAttributeName: shadow, NSFontAttributeName: [UIFont fontWithName:@"Star Jedi" size:28]}];
+    
+    /* 
+     *** Trying to create a cutom button but is not working ***
+    UIEdgeInsets insets = UIEdgeInsetsMake(0, 13, 0, 5);
+    UIImage *backImage = [UIImage imageNamed:@"backBtn"];
+    [[backImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] imageWithAlignmentRectInsets:insets];
+    
+    [[UINavigationBar appearance] setBackIndicatorImage:backImage];
+    [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:backImage];
+    */
 }
 
 
